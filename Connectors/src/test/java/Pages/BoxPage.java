@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.Select;
+
 /**
  * @author Raja Reddy
  *
@@ -16,9 +16,10 @@ public class BoxPage {
 	public BoxPage(WebDriver driver) {
 		this.driver = driver;
 	}
+
 	@FindBy(how = How.XPATH, using = "//input[@type='email']")
 	WebElement uname;
-	
+
 	@FindBy(how = How.XPATH, using = "//*[@name='password']")
 	WebElement pword;
 
@@ -33,7 +34,7 @@ public class BoxPage {
 
 	@FindBy(how = How.XPATH, using = "//input[@name='name']")
 	WebElement name;
-	
+
 	@FindBy(how = How.XPATH, using = "//span[text()='Location']/../../.. //input")
 	WebElement location;
 
@@ -42,16 +43,18 @@ public class BoxPage {
 
 	@FindBy(how = How.XPATH, using = "//img[@src='//du15km6j44b3f.cloudfront.net/static-assets/js/language-cloud/200ec776a5adc0285636d611df5b59ae.svg']")
 	WebElement connector;
-	
-	
+
 	@FindBy(how = How.XPATH, using = "//*[text()='Box Configuration' and @class='action-link']")
-	//@FindBy(how = How.XPATH, using = "//*[@id='gridview-1674-record-1023']/tbody/tr/td[1]/div/span")
-	//@FindBy(how = How.XPATH, using = "//*[@id='configWindow_header-title-textEl']/../../../../.. //[text()='TestR Box']")
+	// @FindBy(how = How.XPATH, using =
+	// "//*[@id='gridview-1674-record-1023']/tbody/tr/td[1]/div/span")
+	// @FindBy(how = How.XPATH, using =
+	// "//*[@id='configWindow_header-title-textEl']/../../../../.. //[text()='TestR
+	// Box']")
 	WebElement selectconfig;
-	
+
 	@FindBy(how = How.XPATH, using = "//input[@name='login']")
 	WebElement buname;
-	
+
 	@FindBy(how = How.XPATH, using = "//input[@name='password']")
 	WebElement bpword;
 
@@ -70,15 +73,14 @@ public class BoxPage {
 	@FindBy(how = How.XPATH, using = "//*[text()='Create & Start']")
 	WebElement createStart;
 
-	
 	public WebElement getuname() {
 		return uname;
 	}
-	
+
 	public WebElement getpword() {
 		return pword;
 	}
-	
+
 	public void getsignIn() {
 		JavascriptExecutor Je = (JavascriptExecutor) driver;
 		Je.executeScript("arguments[0].click();", signIn);
@@ -115,11 +117,11 @@ public class BoxPage {
 	public WebElement getbuname() {
 		return buname;
 	}
-	
+
 	public WebElement getbpword() {
 		return bpword;
 	}
-	
+
 	public void getbsignIn() {
 		JavascriptExecutor Je = (JavascriptExecutor) driver;
 		Je.executeScript("arguments[0].click();", bsignIn);

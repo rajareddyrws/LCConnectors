@@ -23,33 +23,27 @@ public class Reports {
 	public static ExtentHtmlReporter reporter;
 	public static ExtentReports extent;
 	public static ExtentTest logger;
-	
+
 	@BeforeSuite
-	public void setUp()
-	{
+	public void setUp() {
 		reporter = new ExtentHtmlReporter("./OutPut/extentReport.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
 	}
-	
+
 	@AfterMethod
-	public void getResult(ITestResult result)
-	{
-		if(result.getStatus() == ITestResult.FAILURE)
-		{
+	public void getResult(ITestResult result) {
+		if (result.getStatus() == ITestResult.FAILURE) {
 			logger.fail(MarkupHelper.createLabel(result.getName(), ExtentColor.RED));
 			logger.fail(result.getThrowable());
-		}
-		else if(result.getStatus() == ITestResult.SUCCESS)
-		{
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
 			logger.pass(MarkupHelper.createLabel(result.getName(), ExtentColor.GREEN));
 			logger.pass(result.getThrowable());
 		}
 	}
-	
+
 	@AfterSuite
-	public void tearDown()
-	{
+	public void tearDown() {
 		extent.flush();
 	}
 }

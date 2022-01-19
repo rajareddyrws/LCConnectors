@@ -15,7 +15,7 @@ import DataProvider.ConfigReader;
  * @author Raja Reddy
  *
  */
-public class ScreenShot extends ConfigReader{
+public class ScreenShot extends ConfigReader {
 
 	public static void captureScreenshot(WebDriver driver, String screenshotName)
 
@@ -24,7 +24,7 @@ public class ScreenShot extends ConfigReader{
 			TakesScreenshot ts = (TakesScreenshot) driver;
 
 			File SS = ts.getScreenshotAs(OutputType.FILE);
-			
+
 			FileUtils.copyFile(SS, new File("./OutPut/" + screenshotName + ".png"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
